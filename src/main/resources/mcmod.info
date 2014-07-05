@@ -1,0 +1,21 @@
+[
+{
+  "modid": "FirstMod",
+  "name": "First Mod",
+  "description": "My First Mod following Pahimar's Let's Mod Reboot series!",
+  "version": "1.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Neculos"
+  ],
+  "credits": "Neculos",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
