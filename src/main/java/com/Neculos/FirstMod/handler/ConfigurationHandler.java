@@ -11,11 +11,14 @@ public class ConfigurationHandler
 {
     public static Configuration configuration;
     public static boolean testValue = false;
-    public static void init(File configFile) {
+
+    public static void init(File configFile)
+    {
         //create config object from config file
         if (configuration == null)
         {
-            Configuration configuration = new Configuration(configFile);
+            configuration = new Configuration(configFile);
+            loadConfiguration();
         }
     }
 
@@ -24,12 +27,18 @@ public class ConfigurationHandler
     {
         if(event.modID.equalsIgnoreCase(Reference.MOD_ID))
         {
-            //Resync Configs
+            loadConfiguration();
         }
     }
 
-    public void loadConfiguration()
+    private static void loadConfiguration()
     {
-        testValue = configuration.getBoolean()
+        testValue = configuration.getBoolean("configValue", Configuration.CATEGORY_GENERAL, false, "This is an example config value" );
+
+        if(configuration.hasChanged())
+        {
+            configuration.save();
+        }
+
     }
 }
